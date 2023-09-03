@@ -1,0 +1,106 @@
+body {
+    background-color: #85c1e9;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Tilt Prism', cursive;
+}
+
+.container {
+    margin-bottom: 6.25rem;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin: 3.125;
+    font-size: 90px;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: .15em solid whitesmoke;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    100% {
+        border-color: whitesmoke;
+    }
+}
+
+.game-propreties {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.canvas {
+    text-align: right;
+    margin: 6.25rem;
+    padding-right: 6.25rem;
+}
+
+.text {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#canva-container {
+    background-color: white;
+    border: 1px solid #909497;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    height: 450px;
+}
+
+#settings-text {
+    text-align: center;
+    font-family: 'Archivo', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#colorpicker {
+    height: 150px;
+    width: 150px;
+    border: none;
+}
+
+button {
+    margin: 1rem;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #909497;
+    text-align: center;
+}

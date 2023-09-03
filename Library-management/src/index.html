@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+
+<body>
+    <header class="header-container">
+        <h1>Library</h1>
+        <button onclick="googleSignIn()">Login with Gmail</button>
+    </header>
+    <div class="add-book">
+        <button id="add-book-button">+ Add Book</button>
+    </div>
+    <div class="card-book">
+        <div class="card-book-container">
+            <div class="card-book-body">
+                <h2 id="title">Title</h2>
+                <input type="text" id="title-input" placeholder="Book Title">
+                <p id="author">Author</p>
+                <input type="text" id="author-input" placeholder="Author of the book">
+                <p id="read">Have you finished this book?</p>
+                <input type="checkbox" id="already-read">
+            </div>
+            <div class="card-book-header">
+                <button class="save-book-button">Save</button>
+                <button class="delete-book-button">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-container"></div>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

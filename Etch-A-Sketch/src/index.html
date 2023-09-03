@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />`
+    <link rel="stylesheet" type="" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,200&family=Quicksand&family=Tilt+Prism&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch A Sketch</title>
+</head>
+
+<body>
+    <div class="conatiner">
+        <p class="title">Etch A Sketch</p>
+    </div>
+    <div class="game-propreties">
+        <div class="canvas">
+            <canvas id="canva-container">Canvas not supported</canvas>
+        </div>
+        <div class="settings">
+            <h1 id="settings-text">Settings</h1>
+            <p class="text">Choose a color</p>
+            <input type="color" id="colorpicker" value="#0000ff">
+            <p class="text">Change grid size</p>
+            <input type="range" min="1" max="100" value="50" id="range-slider">
+            <button onclick="Clear()">CLEAR</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

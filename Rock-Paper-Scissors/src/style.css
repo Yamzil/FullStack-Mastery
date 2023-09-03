@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4d03f;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.container {
+    margin: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container-game {
+    margin-top: 15px;
+    position: relative;
+
+}
+
+.g {
+    opacity: 0;
+    animation: drop .4s linear forwards .2s;
+    color: black;
+}
+
+.a {
+    opacity: 0;
+    animation: drop .4s linear forwards .4s;
+    color: black;
+}
+
+.m {
+    opacity: 0;
+    animation: drop .4s linear forwards .6s;
+    color: black;
+}
+
+.e {
+    opacity: 0;
+    animation: drop .4s linear forwards .8s;
+    color: black;
+}
+
+.rock-paper-scissors-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#rock {
+    border: 1px solid black;
+    margin: 25px;
+    padding: 30px;
+}
+
+#paper {
+    border: 1px solid black;
+    margin: 25px;
+    padding: 36px 36px 50px;
+}
+
+#scissors {
+    border: 1px solid black;
+    margin: 25px;
+    padding: 30px;
+}
+
+.question-text {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 50px;
+    margin: 50px;
+}
+
+#results {
+    text-align: center;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(-200px) scaleY(0.9);
+        opacity: 0;
+    }
+
+    5% {
+        opacity: .7;
+    }
+
+    50% {
+        transform: translateY(0px) scaleY(1);
+        opacity: 1;
+    }
+
+    65% {
+        transform: translateY(-17px) scaleY(.9);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateY(-22px) scaleY(.9);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px) scaleY(1);
+        opacity: 1;
+    }
+}

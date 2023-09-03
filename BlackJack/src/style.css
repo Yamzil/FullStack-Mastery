@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #229954;
+    font-family: 'Cabin', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: bolder;
+    color: goldenrod;
+}
+
+#qst {
+    color: white;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+#sum-el {
+    color: white;
+    margin: 25px;
+    font-size: 25px;
+}
+
+#cards-el {
+    color: white;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+button {
+    margin: 15px;
+    background-color: goldenrod;
+    color: #016f32;
+    font-weight: bold;
+    border: goldenrod;
+    margin-top: 1px;
+    width: 150px;
+    padding: 5px;
+    cursor: pointer;
+}
