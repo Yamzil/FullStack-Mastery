@@ -41,6 +41,11 @@ body{
     cursor: pointer;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 a:hover {
 	box-shadow: inset 100px 0 0 0 white;
 	color: black;
@@ -74,7 +79,7 @@ li {
     padding: 20px;
 }
 
-.title-menu{
+.title-home{
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -93,9 +98,66 @@ li {
 .menu{
 	display: flex;
 	justify-content: space-around;
+    flex-direction: column;
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 20px;
 	padding: 20px;
-	background-color: black
+    opacity: 0.8;
+	background-color: black;
+    color: white;
+}
+
+.restaurant-menu-title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.recipt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    flex-direction: row-reverse;
+}
+
+.recipt-img{
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    height: 100px;
+}
+
+
+.contact-section{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.contact-section-title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.email{ 
+    color: white;
+    text-align: center;
 }
