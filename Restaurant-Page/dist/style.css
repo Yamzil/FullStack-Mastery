@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&family=Zeyada&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+}
+
+
+.full-container{
+    background-color: black;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-container{
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Zeyada', cursive;
+    text-align: center;
+    font-size: 3.5rem;
+    padding-left: 30px;
+    color: white;
+}
+
+.menu-container{
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+a:hover {
+	box-shadow: inset 100px 0 0 0 white;
+	color: black;
+}
+ 
+.order-menu-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+}
+
+.section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Raleway', sans-serif;
+    margin: 150px 0;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
+    padding: 20px;
+}
+
+.title-menu{
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+
+}
+
+.description-menu{
+    font-size: 1.5rem;
+    max-width: 600px;
+    color: white;
+
+}
+
+.menu{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 20px;
+	background-color: black
+}
