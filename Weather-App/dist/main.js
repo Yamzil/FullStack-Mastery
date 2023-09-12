@@ -32,3 +32,5 @@ function displayWeatherInfo(data) {
 	document.querySelector('.feels-like').innerHTML = data.current.feelslike_c + "°C";
 	
 }
+
+
