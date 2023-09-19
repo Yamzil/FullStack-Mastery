@@ -1,11 +1,12 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const Home = () => {
 
     const [blogs, setBlogs] = useState([
-        { title: 'My new website', body: 'lorem ipsum...', author: 'Mario', id: 1 },
-        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Yoshi', id: 2 },
-        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Juni', id: 3 }
+        { title: 'My new website', body: 'lorem ipsum...', author: 'Mario', id: uuidv4() },
+        { title: 'Welcome party!', body: 'lorem ipsum...', author: 'Yoshi', id: uuidv4()},
+        { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Juni', id: uuidv4() }
     ]);
     return ( 
         <div className="home">
