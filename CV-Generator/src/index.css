@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: 0.35s ease;
 }
 
 body{
@@ -11,13 +12,15 @@ body{
 
 .cv-format {
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: space-around;
 }
 
 .pdf-cv{
   display: flex;
   margin: 20px;
-  background-color: #5499c7;
+  background-color: #f0f0f0;
   border-radius: 5px;
   width: max-content;
 }
@@ -127,7 +130,6 @@ input[type="date"] {
 
 .cv-format {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
 	gap: 20px;
@@ -159,59 +161,83 @@ input[type="date"] {
 	flex-direction: column;
 }
 
-.CVGenerator{
-	display: flex;
-	flex-direction: column;
-	margin: 30px;
-	border: 1px solid black;
+.cv {
+	font-family: Arial, sans-serif;
+	/* max-width: 800px; */
+	margin: 20px;
+	padding: 20px;
 	border-radius: 10px;
+	background-color: #f0f0f0;
 }
 
-.info-image {
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	margin: 10px;
+header {
+	text-align: center;
 }
 
-.FillPersonalInfos {
+h1 {
+	font-size: 24px;
+	margin: 0;
+}
+
+p {
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+section {
+	margin: 20px 0;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	margin: 5px 0;
+}
+
+.App {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 20px;
+	padding: 20px;
 }
 
-img{
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	border: 2px solid black;
-}
-
-.img-button{
-	margin: 10px;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	background-color: white;
-	cursor: pointer;
-	width: max-content;
-}
-
-.Infos{
+.setting-resume {
 	display: flex;
-	align-items: center;
-	text-align: center;
-	gap: 20px;
-	justify-content: space-around;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 1200px;
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-button{
-	margin: 10px;
-	padding: 10px;
-	border-radius: 5px;
-	border: none;
-	background-color: white;
-	cursor: pointer;
-	width: max-content;
+.cv-format {
+	flex: 1;
+	padding: 20px;
+	border-right: 1px solid #ccc;
 }
+
+.resume {
+	flex: 1;
+	padding: 20px;
+}
+
+@media (max-width: 768px) {
+	.setting-resume {
+		flex-direction: column;
+	}
+	.cv-format {
+		border-right: none;
+		border-bottom: 1px solid #ccc;
+	}
+	.resume {
+		border-top: 1px solid #ccc;
+	}
+}
+

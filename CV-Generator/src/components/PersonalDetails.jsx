@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import '../index.css';
 
-const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdresse, changeImage }) => {
+const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdresse }) => {
 	const [fullName, setFullName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [address, setAddress] = useState('');
-	const [image, setImage] = useState(null);
+	// const [image, setImage] = useState(null);
 
 	const handleFullName = (e) => {
 		const NewFullName = e.target.value;	
@@ -35,12 +35,12 @@ const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdres
 		ChangeAdresse(NewAddress);
 	};
 
-	const handleImage = (e) => {
-		const NewImage = e.target.files[0];
-		setImage(NewImage);
-		changeImage(NewImage);
+	// const handleImage = (e) => {
+	// 	const NewImage = e.target.files[0];
+	// 	setImage(NewImage);
+	// 	changeImage(NewImage);
+	// }
 
-	}
     return (
         <div className="Personal-Details">
             <h2>Personal Details</h2>
@@ -62,7 +62,7 @@ const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdres
 					<input type="text" placeholder="Enter your address" value={address} onChange={handleAddress}/>
                 </div>
             </form>
-			<input className="img-button" type="file" accept="image/*" value={image} onChange={handleImage}/>
+			{/* <input className="img-button" type="file" accept="image/*" value={image} onChange={handleImage}/> */}
         </div>
     );
 };
