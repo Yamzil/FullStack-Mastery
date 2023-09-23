@@ -7,133 +7,114 @@ import { useState } from 'react';
 import './index.css';
 
 function App() {
-	const [fullName, setFullName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
-	const [address, setAddress] = useState('');
-
-	const [universityName, setUniversityName] = useState('');
-	const [degreeName, setDegreeName] = useState('');
-	const [startDate, setStartDate] = useState('');
-	const [endDate, setEndDate] = useState('');
-	const [localisation, setLocalisation] = useState('');
-
-	const [companyName, setCompanyName] = useState('');
-	const [title, setTitle] = useState('');
-	const [stratDate, setStratDateJob] = useState('');
-	const [endD, setEndDateJob] = useState('');
-	const [local, setLocal] = useState('');
-	const [description, setDescription] = useState('');
-
-
-
-	const handleFullNameChange = (newFullName) => {
-		setFullName(newFullName);
+	const clearFormFields = () => {
+		setFormPersonalDetails({
+			fullName: '',
+			email: '',
+			phone: '',
+			address: '',
+		});
+		setFormEducation({
+			universityName: '',
+			degreeName: '',
+			startDate: '',
+			endDate: '',
+			localisation: '',
+		});
+		setFormWorking({
+			companyName: '',
+			title: '',
+			stratDate: '',
+			endDate: '',
+			local: '',
+			description: '',
+		});
 	};
 
-	const handleEmailChange = (newEmail) => {
-		setEmail(newEmail);
+	const [FormPersonalDetails, setFormPersonalDetails] = useState({
+		fullName: '',
+		email: '',
+		phone: '',
+		address: '',
+	});
+
+	const HandlePersonalDetailsForm = (PersonalData) => {
+		setFormPersonalDetails(PersonalData);
 	};
 
-	const handlePhoneChange = (newPhone) => {
-		setPhone(newPhone);
+	const [FormEducation, setFormEducation] = useState({
+		universityName: '',
+		degreeName: '',
+		startDate: '',
+		endDate: '',
+		localisation: '',
+	});
+
+	const HandleEducation = (EducationData) => {
+		setFormEducation(EducationData);
 	};
 
-	const handleAddressChange = (newAddress) => {
-		setAddress(newAddress);
-	};
+	const [FormWorking, setFormWorking] = useState({
+		companyName: '',
+		title: '',
+		stratDate: '',
+		endDate: '',
+		local: '',
+		description: '',
+	});
 
-	const handleUniversityName = (NewUniversityName) => {
-		setUniversityName(NewUniversityName);
-	};
-
-	const handleDegreeName = (NewDegreeName) => {
-		setDegreeName(NewDegreeName);
-	};
-
-	const handleStartDate = (NewStartDate) => {
-		setStartDate(NewStartDate);
-	};
-
-	const handleEndDate = (NewEndDate) => {
-		setEndDate(NewEndDate);
-	};
-
-	const handleLocalisation = (NewLocalisation) => {
-		setLocalisation(NewLocalisation);
-	};
-
-	const handleCompanyName = (NewCompanyName) => {
-		setCompanyName(NewCompanyName);
-	}
-
-	const handleTitle = (NewTitle) => {
-		setTitle(NewTitle);
-	}
-
-	const handleStratDateJob = (NewStratDate) => {
-		setStratDateJob(NewStratDate);
-	}
-
-	const handleEndDateJob = (NewEndDate) => {
-		setEndDateJob(NewEndDate);
-	}
-
-	const handleLocalJob = (NewLocal) => {
-		setLocal(NewLocal);
-	}
-
-	const handleDescription = (NewDescription) => {
-		setDescription(NewDescription);
+	const handleCompanyName = (CompanyName) => {
+		setFormWorking(CompanyName);
 	}
 
 	return (
 		<div className="App">
-		<Printcv />
+		<Printcv onClear={clearFormFields} 
+				resumeData={{
+					fullName: FormPersonalDetails.fullName,
+					email: FormPersonalDetails.email,
+					phone: FormPersonalDetails.phone,
+					address: FormPersonalDetails.address,
+					universityName: FormEducation.universityName,
+					degreeName: FormEducation.degreeName,
+					startDate: FormEducation.startDate,
+					endDate: FormEducation.endDate,
+					localisation: FormEducation.localisation,
+					companyName: FormWorking.companyName,
+					title: FormWorking.title,
+					stratDate: FormWorking.stratDate,
+					endD: FormWorking.endDate,
+					local: FormWorking.local,
+					description: FormWorking.description,
+				}}
+		/>
 		<div className="setting-resume">
 				<div className="cv-format">
-					<PersonalDetails ChangeFullName={handleFullNameChange}
-						ChangeEmail={handleEmailChange}
-						ChangePhone={handlePhoneChange}
-						ChangeAdresse={handleAddressChange}
-					/>
-					<Education UniversityName={handleUniversityName}
-						DegreeName={handleDegreeName}
-						StartDate={handleStartDate}
-						EndDate={handleEndDate}
-						Localisation={handleLocalisation}
-					/>
-					<Working CompanyName={handleCompanyName}
-						Title={handleTitle}
-						StratDate={handleStratDateJob}
-						EndDate={handleEndDateJob}
-						Local={handleLocalJob}
-						Description={handleDescription}
-					/>
+					<PersonalDetails ChangPersonalDetails={HandlePersonalDetailsForm}/>
+					<Education ChangeEducation={HandleEducation}/>
+					<Working ChangeWorking={handleCompanyName}/>
 				</div> 
 			<div className="resume">
-				<Resume fullName={fullName}
-				email={email}
-				phone={phone}
-				address={address}
-				universityName={universityName}
-				degreeName={degreeName}
-				startDate={startDate}
-				endDate={endDate}
-				localisation={localisation}
-				companyName={companyName}
-				title={title}
-				stratDate={stratDate}
-				endD={endD}
-				local={local}
-				description={description}
-
+				<Resume fullName={FormPersonalDetails.fullName}
+				email={FormPersonalDetails.email}
+				phone={FormPersonalDetails.phone}
+				address={FormPersonalDetails.address}
+				universityName={FormEducation.universityName}
+				degreeName={FormEducation.degreeName}
+				startDate={FormEducation.startDate}
+				endDate={FormEducation.endDate}
+				localisation={FormEducation.localisation}
+				companyName={FormWorking.companyName}
+				title={FormWorking.title}
+				stratDate={FormWorking.stratDate}
+				endD={FormWorking.endDate}
+				local={FormWorking.local}
+				description={FormWorking.description}
 				/>
 			</div>
 		</div>
 		</div>
   );
 }
-
 export default App
 

@@ -47,6 +47,7 @@ body{
 	background-color: #f0f0f0;
 	padding: 20px;
 	border-radius: 10px;
+	width: 100%;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -83,6 +84,7 @@ input[type="tel"] {
 	background-color: #f0f0f0;
 	padding: 20px;
 	border-radius: 10px;
+	width: 100%;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -163,7 +165,7 @@ input[type="date"] {
 
 .cv {
 	font-family: Arial, sans-serif;
-	/* max-width: 800px; */
+	width: 100%;
 	margin: 20px;
 	padding: 20px;
 	border-radius: 10px;

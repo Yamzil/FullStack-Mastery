@@ -1,45 +1,22 @@
 import { useState } from 'react';
 import '../index.css';
 
-const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdresse }) => {
-	const [fullName, setFullName] = useState('');
-	const [email, setEmail] = useState('');
-	const [phone, setPhone] = useState('');
-	const [address, setAddress] = useState('');
-	// const [image, setImage] = useState(null);
+const PersonalDetails = ({ChangPersonalDetails}) => {
+	const [FormPersonalDetails, setFormPersonalDetails] = useState({
+		fullName: '',
+		email: '',
+		phone: '',
+		address: '',
+	});
 
-	const handleFullName = (e) => {
-		const NewFullName = e.target.value;	
-		setFullName(NewFullName);
-		ChangeFullName(NewFullName);
+	const HandleFormPersonalDetails = (e) => {
+		const updatedData = {
+			...FormPersonalDetails,
+			[e.target.name]: e.target.value,
+		};
+		setFormPersonalDetails(updatedData);
+		ChangPersonalDetails(updatedData);
 	};
-
-
-	const handleEmail = (e) => {
-		const NewEmail = e.target.value;
-		setEmail(NewEmail);
-		ChangeEmail(NewEmail);
-	};
-
-
-	const handlePhone = (e) => {
-		const NewPhone = e.target.value;
-		setPhone(NewPhone);
-		ChangePhone(NewPhone);
-	};
-
-
-	const handleAddress = (e) => {
-		const NewAddress = e.target.value;
-		setAddress(NewAddress);
-		ChangeAdresse(NewAddress);
-	};
-
-	// const handleImage = (e) => {
-	// 	const NewImage = e.target.files[0];
-	// 	setImage(NewImage);
-	// 	changeImage(NewImage);
-	// }
 
     return (
         <div className="Personal-Details">
@@ -47,24 +24,35 @@ const PersonalDetails = ({ ChangeFullName, ChangeEmail, ChangePhone, ChangeAdres
             <form className="full-form">
                 <div className="form-group">
                     <label htmlFor="name">Full Name</label>
-					<input type="text" placeholder="Enter your name" value={fullName} onChange={handleFullName}/>
+					<input type="text" 
+					placeholder="Enter your name"
+					name="fullName"
+					onChange={HandleFormPersonalDetails}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-					<input type="email" placeholder="Enter your email" value={email} onChange={handleEmail}/>
+					<input type="email" 
+					placeholder="Enter your email" 
+					name="email"
+					onChange={HandleFormPersonalDetails}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="phone">Phone</label>
-					<input type="tel" placeholder="Enter your phone number" value={phone}  onChange={handlePhone}/>
+					<input type="tel" 
+					placeholder="Enter your phone number" 
+					name="phone"
+					onChange={HandleFormPersonalDetails}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="address">Address</label>
-					<input type="text" placeholder="Enter your address" value={address} onChange={handleAddress}/>
+					<input type="text" 
+					placeholder="Enter your address"
+					name="address"
+					onChange={HandleFormPersonalDetails}/>
                 </div>
             </form>
-			{/* <input className="img-button" type="file" accept="image/*" value={image} onChange={handleImage}/> */}
         </div>
     );
-};
+}
  
 export default PersonalDetails;

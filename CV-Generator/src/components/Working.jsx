@@ -1,48 +1,23 @@
 import '../index.css';
 import { useState } from 'react';
 
-const Working = ({CompanyName, Title, StratDate, EndDate, Local, Description}) => {
-    const [companyName, setCompanyName] = useState('');
-    const [title, setTitle] = useState('');
-    const [stratDate, setStratDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [local, setLocal] = useState('');
-    const [description, setDescription] = useState('');
+const Working = ({ChangeWorking}) => {
+    const [FormWorking, setFormWorking] = useState({
+        companyName: '',
+        title: '',
+        stratDate: '',
+        endDate: '',
+        local: '',
+        description: '',
+    });
 
-    const handleCompanyName = (e) => {
-        const NewCompanyName = e.target.value;	
-        setCompanyName(NewCompanyName);
-        CompanyName(NewCompanyName);
-    }
-
-    const handleTitle = (e) => {
-        const NewTitle = e.target.value;
-        setTitle(NewTitle);
-        Title(NewTitle);
-    }
-
-    const handleStratDate = (e) => {
-        const NewStratDate = e.target.value;
-        setStratDate(NewStratDate);
-        StratDate(NewStratDate);
-    }
-
-    const handleEndDate = (e) => {
-        const NewEndDate = e.target.value;
-        setEndDate(NewEndDate);
-        EndDate(NewEndDate);
-    }
-
-    const handleLocal = (e) => {
-        const NewLocal = e.target.value;
-        setLocal(NewLocal);
-        Local(NewLocal);
-    }
-
-    const handleDescription = (e) => {
-        const NewDescription = e.target.value;
-        setDescription(NewDescription);
-        Description(NewDescription);
+    const HandleFormWorking = (e) => {
+        const updatedData = {
+            ...FormWorking,
+            [e.target.name]: e.target.value,
+        };
+        setFormWorking(updatedData);
+        ChangeWorking(updatedData);
     }
 
     return (  
@@ -51,29 +26,48 @@ const Working = ({CompanyName, Title, StratDate, EndDate, Local, Description}) =
             <form className="full-form">
                 <div className="form-group">
                     <label htmlFor="name">Company Name</label>
-                    <input type="text" value={companyName } onChange={handleCompanyName} placeholder="Enter your company name" />
+                    <input type="text" 
+                    name="companyName"                   
+                    onChange={HandleFormWorking} 
+                    placeholder="Enter your company name" />
                 </div>
                 <div className="form-group">
 					<label htmlFor="email">Position Title</label>
-                    <input type="email" value={title} onChange={handleTitle} placeholder="Full Stack Developer" />
+                    <input type="email" 
+                    name="title"
+                    onChange={HandleFormWorking} 
+                    placeholder="Full Stack Developer" />
                 </div>
                 <div className="study-date">
                     <div className="start-date">
                         <label htmlFor="phone">Start Date</label>
-                        <input value={stratDate} onChange={handleStratDate} type="date" />
+                        <input 
+                        name="stratDate"
+                        onChange={HandleFormWorking} 
+                        type="date" />
                     </div>
                     <div className="end-date">
                         <label htmlFor="phone">End Date</label>
-                        <input value={endDate} onChange={handleEndDate} type="date" />
+                        <input 
+						name="endDate" 
+						onChange={HandleFormWorking} 
+						type="date" />
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="address">Localisation</label>
-                    <input type="text" value={local} onChange={handleLocal} placeholder="Casablanca, MA" />
+                    <input 
+					type="text" 
+					name='local' 
+					onChange={HandleFormWorking} 
+					placeholder="Casablanca, MA" />
                 </div>
 				<div className="description-format">
 				<label htmlFor="address">Description</label>
-                <textarea type="text" value={description} onChange={handleDescription} placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
+                <textarea type="text" 
+				name='description' 
+				onChange={HandleFormWorking} 
+				placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
 				</div>
             </form>
             <button className="education-button-add">Add</button>
