@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=VT323&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+	--bg-image: url(src/assests/pokemon_bg.jpg);
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+    font-family: 'VT323', monospace;
+}
+
+.loading-page{
+	background-image: var(--bg-image);
+	background-size: cover;
+	height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-size: 90px;
+    margin-top: 50px;
+}
+
+.start-game{
+    margin: 50px;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ffcb05;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.loader {
+	width: 120px;
+	height: 20px;
+	-webkit-mask: linear-gradient(90deg, #000 70%, #0000 0) 0/20%;
+	mask: linear-gradient(90deg, #000 70%, #0000 0) 0/20%;
+	mask: linear-gradient(90deg, #000 70%, #0000 0) 0/20%;
+	background:
+		linear-gradient(#000 0 0) 0/0% no-repeat #ddd;
+	animation: l4 2s infinite steps(6);
+}
+
+@keyframes l4 {
+	100% {
+		background-size: 120%
+	}
+}
+
+.game{
+	background-image: var(--bg-image);
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.scoreboard{
+	width: 100%;
+	height: 100px;
+	background-color: #ffcb05;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.game-card{
+	height: 100vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 10rem;
+}
+
+.pokemon-card{
+	width: 300px;
+	height: 400px;
+	background-color: #ffcb05;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5)
+}
